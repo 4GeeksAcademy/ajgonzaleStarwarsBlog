@@ -3,5 +3,35 @@
 */
 .logo {
     width: 10%;
-    
+}
+
+.white, .white:hover, .white:focus{ 
+    color: white;
+}
+
+.red {
+    color: red;
+}
+
+.card {
+    width: 300px;
+    border: black 1px solid;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.footerCard{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rowList {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.title {
+    margin: 15px;
 }

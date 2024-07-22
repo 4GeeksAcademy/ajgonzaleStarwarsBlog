@@ -1,6 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			characterList : [],
+			vehiclesList : [],
+			planetsList : [],
 			demo: [
 				{
 					title: "FIRST",
@@ -37,7 +40,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			getCharacterList : () => {
+				const store = getStore();
+				fetch("https://swapi.dev/api/people/?format=json").then((res) => {
+					return res.json();
+				  })
+				  .then(data => { 
+					setStore({ characterList : data.results});
+				  })
+			},
+			getVehiclesList : () => {
+				const store = getStore();
+				fetch("https://swapi.dev/api/vehicles/?format=json").then((res) => {
+					return res.json();
+				  })
+				  .then(data => { 
+					setStore({ vehiclesList : data.results });
+				  })
+			},
+			getPlanetsList : () => {
+				const store = getStore();
+				fetch("https://swapi.dev/api/planets/?format=json").then((res) => {
+					return res.json();
+				  })
+				  .then(data => { 
+					setStore({ planetsList : data.results });
+				  })
+			},
 		}
 	};
 };
