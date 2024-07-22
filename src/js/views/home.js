@@ -20,7 +20,7 @@ export const Home = () => {
 		<div class="row rowList">
 			{store.characterList.map((item, index) => {
 					return (
-						<Character name={item.name} gender={item.gender} hairColor={item.hair_color} eyeColor={item.eye_color} />
+						<Character index={index} name={item.name} gender={item.gender} hairColor={item.hair_color} eyeColor={item.eye_color} />
 					);
 				})}
 		</div>	

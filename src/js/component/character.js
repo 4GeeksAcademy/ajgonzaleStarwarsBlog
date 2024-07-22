@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import image from "../../img/400x200.png";
 
@@ -13,7 +14,9 @@ export const Character = (props) => {
             <p className="card-text">Hair Color: {props.hairColor}</p>
             <p className="card-text">Eye-Color: {props.eyeColor}</p>
             <div className="footerCard">
-                <a href="#" className="btn btn-primary">Learn more!</a>
+                <Link to={"/details/" + props.index} className="btn btn-primary">
+                    <span>Learn more!</span>
+                </Link>
                 <a href="#">
                     <i className="far fa-heart"></i>
                 </a>
