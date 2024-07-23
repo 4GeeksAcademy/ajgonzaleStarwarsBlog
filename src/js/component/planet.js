@@ -18,7 +18,7 @@ export const Planet = (props) => {
                 <Link to={"/details/p" + props.index} className="btn btn-primary">
                     <span>Learn more!</span>
                 </Link>
-                <a>
+                <a className="btn-outline-warning">
                     {props.favorite ? <i className="fas fa-heart" onClick={e => actions.addFavorites("p"+props.index, props.name)}></i> :
                     <i className="far fa-heart" onClick={e => actions.addFavorites("p"+props.index, props.name)}></i>}
                 </a>
