@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import image from "../../img/400x200.png";
+import { Context } from "../store/appContext";
 
 export const Character = (props) => {
+    const { store, actions } = useContext(Context);
     
    return (
 	<div className="card mx-3" >
@@ -14,11 +16,12 @@ export const Character = (props) => {
             <p className="card-text">Hair Color: {props.hairColor}</p>
             <p className="card-text">Eye-Color: {props.eyeColor}</p>
             <div className="footerCard">
-                <Link to={"/details/" + props.index} className="btn btn-primary">
+                <Link to={"/details/c" + props.index} className="btn btn-primary">
                     <span>Learn more!</span>
                 </Link>
-                <a href="#">
-                    <i className="far fa-heart"></i>
+                <a className="btn-outline-warning">
+                    {props.favorite ? <i className="fas fa-heart" onClick={e => actions.addFavorites("c"+props.index, props.name)}></i> :
+                    <i className="far fa-heart" onClick={e => actions.addFavorites("c"+props.index, props.name)}></i>}
                 </a>
             </div>
         </div>

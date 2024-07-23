@@ -20,7 +20,7 @@ export const Home = () => {
 		<div class="row rowList">
 			{store.characterList.map((item, index) => {
 					return (
-						<Character index={index} name={item.name} gender={item.gender} hairColor={item.hair_color} eyeColor={item.eye_color} />
+						<Character key={'c'+index} index={index} name={item.name} gender={item.gender} hairColor={item.hair_color} eyeColor={item.eye_color} favorite={item.favorite} />
 					);
 				})}
 		</div>	
@@ -32,7 +32,7 @@ export const Home = () => {
 		<div class="row rowList">
 			{store.vehiclesList.map((item, index) => {
 					return (
-						<Vehicle name={item.name} class={item.vehicle_class} maxSpeed={item.max_atmosphering_speed} />
+						<Vehicle key={'v'+index} index={index} name={item.name} class={item.vehicle_class} maxSpeed={item.max_atmosphering_speed} favorite={item.favorite} />
 					);
 				})}
 		</div>	
@@ -44,7 +44,7 @@ export const Home = () => {
 		<div class="row rowList">
 			{store.planetsList.map((item, index) => {
 					return (
-						<Planet name={item.name} population={item.population} terrain={item.terrain} />
+						<Planet key={'p'+index} index={index} name={item.name} population={item.population} terrain={item.terrain} favorite={item.favorite} />
 					);
 				})}
 		</div>		
